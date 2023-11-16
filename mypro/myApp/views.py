@@ -10,6 +10,6 @@ def myApp(request):
         student = Student(name=name,branch=branch,college=college,grade=grade)
         student.save()
 
-    # std = Student.objects.all()
-
-    return render(request,"index.html")
+    std = Student.objects.all()
+    
+    return render(request,"index.html",{"students" : std})
